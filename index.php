@@ -17,6 +17,11 @@
    <link rel="stylesheet" href="assets/styles.css">
 
    <title>Home Cinema</title>
+   <style>
+      .konten {
+         margin-top: -280px;
+      }
+   </style>
 </head>
 
 <body class="bg-light">
@@ -53,19 +58,19 @@
 
    <!-- Jumbotron -->
    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-         <h1 class="display-4">Cari <span>VCD</span> yang mau <span>kamu</span> sewa</h1>
+      <!-- <div class="container"> -->
+         <!-- <h1 class="display-4">Cari <span>VCD</span> yang mau <span>kamu</span> sewa</h1> -->
 
          <!-- Search panel -->
-         <div class="search-panel rounded-pill">
+         <!-- <div class="search-panel rounded-pill">
             <input type=" text" name="cari" class="cari" placeholder="Judul film yang dicari">
-            <a href="#" class="cari-btn rounded-circle">
+            <a href="?jd=" class="cari-btn rounded-circle">
                <i class="fas fa-search"></i>
             </a>
-         </div>
+         </div> -->
          <!-- End of search panel -->
 
-      </div>
+      <!-- </div> -->
    </div>
    <!-- End of Jumbotron -->
 

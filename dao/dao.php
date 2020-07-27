@@ -8,11 +8,6 @@
             foreach ($json['vcd'] as $data) {
                 $sedia = $data['kondisi_baik'] - $data['kondisi_buruk'] - $data['terpinjam'];
                 array_push($output, array($data['id_vcd'], $data['poster'], $data['judul'], $sedia));
-                // if(url_exists($data['poster'])){
-                //     array_push($output, array_push($data['id_vcd'], $data['poster'], $data['judul'], $sedia));
-                // } else{
-                //     array_push($output, array_push($data['id_vcd'], "0", $data['judul'], $sedia));
-                // }
             }
 
             if($output != null){
@@ -31,11 +26,6 @@
                 if($data['id_vcd'] == $id){
                     $sedia = $data['kondisi_baik'] - $data['kondisi_buruk'] - $data['terpinjam'];
                     array_push($output, $data['poster'], $data['judul'], $data['rilis'], $data['genre'], $data['bahasa'], $sedia);
-                    // if(url_exists($data['poster'])){
-                    //     array_push($output, $data['poster'], $data['judul'], $data['rilis'], $data['genre'], $data['bahasa'], $sedia);
-                    // } else{
-                    //     array_push($output, "0", $data['judul'], $data['rilis'], $data['genre'], $data['bahasa'], $sedia);
-                    // }
                 }
             }
 
@@ -283,6 +273,25 @@
                 return false;
             } else{
                 return true;
+            }
+        }
+
+        public function vcd_cari($judul){
+            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/vcd.json");
+            $json = json_decode($jsonData, true);
+            $output = array();
+
+            foreach ($json['vcd'] as $data) {
+                if($data['judul'] == $judul){
+                    $sedia = $data['kondisi_baik'] - $data['kondisi_buruk'] - $data['terpinjam'];
+                    array_push($output, array($data['id_vcd'], $data['poster'], $data['judul'], $sedia));
+                }
+            }
+
+            if($output != null){
+                return $output;
+            } else{
+                return false;
             }
         }
     }
