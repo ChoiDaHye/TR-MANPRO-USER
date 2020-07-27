@@ -1,7 +1,7 @@
 <?php
     class mydata{
         public function vcd_tampil(){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/vcd.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\vcd.json');
             $json = json_decode($jsonData, true);
             $output = array();
 
@@ -18,7 +18,7 @@
         }
 
         public function vcd_detail($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/vcd.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\vcd.json');
             $json = json_decode($jsonData, true);
             $output = array();
 
@@ -37,7 +37,7 @@
         }
 
         public function login($u, $p){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json');
             $json = json_decode($jsonData, true);
             $id = "";
 
@@ -62,7 +62,7 @@
         }
 
         public function profile_tampil($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json');
             $json = json_decode($jsonData, true);
             $output = array();
 
@@ -80,7 +80,7 @@
         }
 
         public function profile_edit($id, $data){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json');
             $json = json_decode($jsonData, true);
 
             $newDate = date("d/m/Y");
@@ -93,7 +93,7 @@
                 }
             }
 
-            if(file_put_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json", json_encode($json, JSON_UNESCAPED_SLASHES))){
+            if(file_put_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json', json_encode($json, JSON_UNESCAPED_SLASHES))){
                 return true;
             } else{
                 return false;
@@ -101,7 +101,7 @@
         }
 
         public function profile_pass($id, $old, $new){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json');
             $json = json_decode($jsonData, true);
             $cp = 0;
 
@@ -114,7 +114,7 @@
                 }
             }
 
-            if($cp == 1 && file_put_contents("C:/Users/dgeda/Documents/vcd-data/tes/customer.json", json_encode($json, JSON_UNESCAPED_SLASHES))){
+            if($cp == 1 && file_put_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\customer.json', json_encode($json, JSON_UNESCAPED_SLASHES))){
                 return true;
             } else{
                 return false;
@@ -122,7 +122,7 @@
         }
 
         public function trans_jalan($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/pinjam.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\pinjam.json');
             $json = json_decode($jsonData, true);
             $output = array();
             $i = 1;
@@ -163,7 +163,7 @@
         }
 
         public function trans_jalan_det($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/pinjam_det.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\pinjam_det.json');
             $json = json_decode($jsonData, true);
             $output = array();
 
@@ -182,8 +182,8 @@
         }
 
         public function trans_selesai($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/pinjam.json");
-            $jsonData2 = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/kembali.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\pinjam.json');
+            $jsonData2 = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\kembali.json');
             $json = json_decode($jsonData, true);
             $json2 = json_decode($jsonData2, true);
             $output = array();
@@ -194,15 +194,15 @@
                     foreach ($json2['kembali'] as $data2) {
                         if($data2['id_pinjam'] == $data['id_pinjam']){
                             $cp = 0;
-                            foreach ($output as $i => $data3) {
+                            foreach ($output as $j => $data3) {
                                 if($data3[1] == $data['id_pinjam']){
-                                    $output[$i][3] = $data3[3] + $data2['denda_total'];
+                                    $output[$j][3] = $data3[3] + $data2['denda_total'];
                                     $cp = 1;
                                 }
                             }
 
                             if($cp == 0){
-                                array_push($output, array($i, $data['id_pinjam'], $data['harga_total'], $data2['denda_total']));
+                                array_push($output, array($i, $data2['id_kembali'], $data['id_pinjam'], $data['harga_total'], $data2['denda_total']));
                             }                            
 
                             $i++;
@@ -219,26 +219,18 @@
         }
 
         public function trans_selesai_det($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/kembali.json");
-            $jsonData2 = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/kembali_det.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\kembali.json');
+            $jsonData2 = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\kembali_det.json');
             $json = json_decode($jsonData, true);
             $json2 = json_decode($jsonData2, true);
             $output = array();
-            $pinjam = array();
-            $kembali = array();
-
-            foreach ($json['kembali'] as $data) {
-                if($data['id_pinjam'] == $id){
-                    foreach ($json2['kembali_det'] as $data2) {
+            
+            foreach($json['kembali'] as $data){
+                if($data['id_kembali'] == $id){
+                    foreach($json2['kembali_det'] as $data2){
                         if($data2['id_kembali'] == $data['id_kembali']){
-                            $cp3 = 0;
-                            foreach($kembali as $data3){
-                                
-                            }
-
-                            if($cp3 == 0){
-                                array_push($kembali, array());
-                            }
+                            $judul = $this->get_judul($data2['id_vcd']);
+                            array_push($output, array($judul, $data2['jumlah'], $data2['kondisi_rusak'], $data2['denda']));
                         }
                     }
                 }
@@ -252,7 +244,7 @@
         }
 
         public function get_judul($id){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/vcd.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\vcd.json');
             $json = json_decode($jsonData, true);
             $judul = "";
 
@@ -277,7 +269,7 @@
         }
 
         public function vcd_cari($judul){
-            $jsonData = file_get_contents("C:/Users/dgeda/Documents/vcd-data/tes/vcd.json");
+            $jsonData = file_get_contents(getenv("HOMEDRIVE").getenv("HOMEPATH").'\Documents\vcd-data\data\vcd.json');
             $json = json_decode($jsonData, true);
             $output = array();
 

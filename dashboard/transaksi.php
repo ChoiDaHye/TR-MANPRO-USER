@@ -186,8 +186,8 @@
                 <thead>
                     <tr>
                         <th scope="col" style="text-align:center; width:5%">#</th>
-                        <th scope="col" colspan="2" style="width:35%">No. Transaksi</th>
-                        <th scope="col" style="text-align:center; width:30%">Total harga</th>
+                        <th scope="col" colspan="3" style="width:35%">No. Transaksi</th>
+                        <th scope="col" style="text-align:center; width:30%">Harga transaksi</th>
                         <th scope="col" style="text-align:center; width:30%">Todal denda</th>
                     </tr>
                 </thead>
@@ -196,10 +196,11 @@
                     <tr>
                         <th scope="row" style="text-align:center"><?php echo $r[0]; ?></th>
                         <td><?php echo $r[1]; ?></td>
+                        <td><?php echo $r[2]; ?></td>
                         <td style="text-align:center"><button type="button" class="btn btn-secondary btn-sm"
                                 data-toggle="modal" data-target="<?php echo '#modal2'.$r[1]; ?>">Detail</button></td>
-                        <td style="text-align:center"><?php echo 'Rp. '.number_format($r[2],2,',','.'); ?></td>
                         <td style="text-align:center"><?php echo 'Rp. '.number_format($r[3],2,',','.'); ?></td>
+                        <td style="text-align:center"><?php echo 'Rp. '.number_format($r[4],2,',','.'); ?></td>
                     </tr>
                     <div class="modal fade bd-example-modal-md" id="<?php echo 'modal2'.$r[1]; ?>" tabindex="-1"
                         role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
