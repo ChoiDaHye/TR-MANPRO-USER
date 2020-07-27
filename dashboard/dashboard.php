@@ -107,6 +107,9 @@
                         <button type="submit" class="btn btn-primary btn-sm" name="getout">Keluar</button>
                     </form>
                     <?php
+                        include "../dao/dao.php";
+                        $obj    = new mydata();
+
                         if(isset($_POST["getout"])){
                             $obj->logout();
                             echo '<meta http-equiv="refresh" content="0; url=../">';
