@@ -88,21 +88,7 @@
                     <div class="card-body tentang">
                         <img src="https://img.icons8.com/windows/64/0078D7/refund-2.png" />
                         <h5 class="card-title">Bagaimana cara transaksinya</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed
-                            semper mi. Nunc sit amet turpis porta, maximus nunc ut, lacinia lacus. Aenean sit amet
-                            consectetur turpis. Praesent sapien est, faucibus sed eros in, aliquam molestie dolor.
-                            Aliquam a lacinia mauris. Fusce hendrerit bibendum nunc iaculis sagittis. Donec non massa eu
-                            leo tempor sagittis vitae eget magna. Morbi vulputate turpis ut justo auctor, sit amet
-                            luctus risus efficitur. Sed neque lectus, elementum a aliquet sit amet, convallis eget
-                            libero. Aliquam sed pulvinar felis.</p>
-                        <p class="card-text">
-                            Nam laoreet sit amet elit at semper. Donec hendrerit rhoncus augue, sit amet tempor sem
-                            rhoncus et. Pellentesque gravida nunc quis lorem dapibus, et semper odio iaculis. Morbi
-                            vehicula ultricies neque sit amet volutpat. Pellentesque egestas sapien sed mauris
-                            consectetur, vulputate interdum neque gravida. Ut eleifend est arcu. Quisque commodo nunc
-                            mattis augue volutpat condimentum. Vivamus diam felis, lacinia non viverra ut, ultrices
-                            pharetra erat. Sed ligula neque, lacinia vel semper sed, cursus congue ligula. In massa
-                            arcu, tempor quis tempus vitae, maximus lacinia mi.</p>
+                        <img src="assets/img/about.png" width="100%" />
                     </div>
                 </div>
             </div>
