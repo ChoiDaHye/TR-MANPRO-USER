@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Style the side navigation */
+.sidenav {
+    height: 100%;
+    width: 320px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+}
+
+.sidenav .navbar-brand {
+    font-family: 'Metal Mania', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    padding: 50px 0px 15px 0px;
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidenav .box {
+    display: flex;
+    color: #333333;
+    padding: 12px 13px;
+    text-decoration: none;
+    align-items: center;
+    border: 2px solid #F5F5F5;
+}
+
+.sidenav .box.active {
+    border: 2px solid #E1E1E1;
+    background-color: #E1E1E1;
+}
+
+.sidenav .box img {
+    padding-right: 10px;
+}
+
+.sidenav .box:hover {
+    border: 2px solid #606060;
+    background-color: #E1E1E1;
+}
+
+/* Style the content */
+.content {
+    margin-left: 320px;
+    padding: 50px 45px;
+}
+
+.content h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #333333;
+}
+
+.content .isi {
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
+}
+
+.menu {
+    border: 2px solid #ffffff;
+    padding: 15px 30px 15px 15px;
+    margin-right: 10px;
+}
+
+.menu img {
+    margin-bottom: 15px;
+}
+
+.menu p {
+    margin: 0px;
+}
+
+.menu:hover {
+    border: 2px solid #D4D4D4;
+}
+
+.p-med {
+    font-weight: 400;
+    font-size: 17px;
+    color: #333333;
+}
+
+.p-normal {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+}
+
+.p-reg {
+    font-weight: 400;
+    font-size: 15px;
+    color: #606060;
+}
+
+.p-kecil {
+    font-weight: 400;
+    font-size: 14px;
+    color: #606060;
+}
+
+.form-group {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.formku {
+    border: 2px solid #606060;
+}
+
+.btn-secondaryku {
+    background-color: #CCCCCC;
+}
