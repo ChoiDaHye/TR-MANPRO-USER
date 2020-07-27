@@ -20,6 +20,19 @@
 </head>
 
 <body class="bg-light">
+    <?php
+        include "./dao/dao.php";
+        $obj    = new mydata();
+        $id = "";
+
+        if(isset($_GET['d'])) {
+            $id = $_GET['d'];
+        } else{
+            echo '<meta http-equiv="refresh" content="0; url=./">';
+        }
+
+        $data = $obj->vcd_detail($id);
+    ?>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -30,9 +43,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Tentang</a>
-                    <a class="nav-item tombol btn btn-primary rounded-pill" href="#">Login</a>
+                    <a class="nav-item nav-link" href="./">Beranda <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="./about.php">Tentang</a>
+                    <?php
+                        session_start();
+
+                        if(isset($_SESSION['idCustomer'])){
+                            echo '<a class="nav-item tombol btn btn-primary rounded-pill" href="./dashboard/dashboard.php">Dashboard</a>';
+                        } else{
+                            echo '<a class="nav-item tombol btn btn-primary rounded-pill" href="login.php">Login</a>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -48,30 +69,23 @@
     <!-- Content -->
     <div class="container konten-3">
         <div class="row d-flex justify-content-center">
-            <div class="card mb-4 rounded-0" style="max-width: 950px;">
+            <div class="card mb-4 rounded-0" style="min-width: 950px; max-width: 950px;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="450"
-                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                            role="img" aria-label="Placeholder: Thumbnail">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="42%" y="50%" fill="#eceeef"
-                                dy=".3em">Poster</text>
-                        </svg>
+                        <img src="<?php echo $data[0]; ?>" title="<?php echo $data[1]; ?>" class="poster2">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Judul</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text" style="padding-bottom: 10px;"><?php echo $data[1]; ?></p>
                             <h6 class="card-title">Tanggal rilis</h6>
-                            <p class="card-text">This is a wider.</p>
+                            <p class="card-text" style="padding-bottom: 10px;"><?php echo $data[2]; ?></p>
                             <h6 class="card-title">Genre</h6>
-                            <p class="card-text">This is a wider.</p>
+                            <p class="card-text" style="padding-bottom: 10px;"><?php echo $data[3]; ?></p>
                             <h6 class="card-title">Bahasa</h6>
-                            <p class="card-text">This is a wider.</p>
+                            <p class="card-text" style="padding-bottom: 10px;"><?php echo $data[4]; ?></p>
                             <h6 class="card-title">Tersedia</h6>
-                            <p class="card-text">This is a wider.</p>
+                            <p class="card-text"><?php echo $data[5]; ?></p>
                         </div>
                     </div>
                 </div>

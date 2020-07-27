@@ -64,23 +64,22 @@
                         <img src="https://img.icons8.com/windows/64/0078D7/info.png" />
                         <h5 class="card-title">Apa itu Home Cinema</h5>
                         <p class="card-text">Home Cinema merupakan sebuah layanan penyewa VCD terletak 
-di Jl. Genteng No. xx, Kota x, Jawa Tengah yang menyediakan 
-kemudahanan dalam transaksi serta harga yang terjangkau. 
-Kami menyediakan jutaan VCD yang siap untuk disewakan dengan
-kualitas video jernih dan original. Terdapat puluhan genre 
-dan kelengkapan VCD dari film lama sampai dengan film terbaru
-yang dapat dinikmati oleh semua kalangan. Hal ini yang membuat
-Home Cinema menjadi layanan penyewa VCD pilihan terbaik dan 
-terpercaya oleh masyarakat.</p>
-                        <p class="card-text">
-                        Kenapa memilih Home Cinema?
-Karena kami berfokus pada customer satisfaction yaitu menyediakan 
-kemudahan bagi customer yang ingin melakukan penyewaan VCD. 
-Customer dapat melakukan pengecekan terkait informasi VCD
-yang tersedia di toko kami kapan dan dimana saja tanpa mengharuskan
-ke toko untuk melakukan pengecekan. Customer juga akan diberikan 
-sebuah akun yang berguna untuk memantau data transaksi VCD yang 
-dilakukan oleh customer.</p>
+                            di Jl. Genteng No. xx, Kota x, Jawa Tengah yang menyediakan 
+                            kemudahanan dalam transaksi serta harga yang terjangkau. 
+                            Kami menyediakan jutaan VCD yang siap untuk disewakan dengan
+                            kualitas video jernih dan original. Terdapat puluhan genre 
+                            dan kelengkapan VCD dari film lama sampai dengan film terbaru
+                            yang dapat dinikmati oleh semua kalangan. Hal ini yang membuat
+                            Home Cinema menjadi layanan penyewa VCD pilihan terbaik dan 
+                            terpercaya oleh masyarakat.</p>
+                        <p class="card-text">Kenapa memilih Home Cinema?
+                            Karena kami berfokus pada customer satisfaction yaitu menyediakan 
+                            kemudahan bagi customer yang ingin melakukan penyewaan VCD. 
+                            Customer dapat melakukan pengecekan terkait informasi VCD
+                            yang tersedia di toko kami kapan dan dimana saja tanpa mengharuskan
+                            ke toko untuk melakukan pengecekan. Customer juga akan diberikan 
+                            sebuah akun yang berguna untuk memantau data transaksi VCD yang 
+                            dilakukan oleh customer.</p>
                     </div>
                 </div>
             </div>

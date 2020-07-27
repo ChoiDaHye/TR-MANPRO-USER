@@ -89,11 +89,11 @@
                      dy=".3em">Poster</text>
                </svg>
                <?php } else{?>
-                  <img src="<?php echo $r[1]; ?>" alt="<?php echo $r[2]; ?>" class="poster1">
+                  <img src="<?php echo $r[1]; ?>" title="<?php echo $r[2]; ?>" class="poster1">
                <?php } ?>               
             </div>
             <div class="card-body bg-light detail">
-               <p class="card-text judul"><a href="detail.php/?d=<?php echo $r[0]; ?>"><?php echo $r[2]; ?></a></p>
+               <p class="card-text judul"><a href="detail.php?d=<?php echo $r[0]; ?>"><?php echo $r[2]; ?></a></p>
                <p class="card-text deskrip">Tersedia: <?php echo $r[3]; ?></p>
             </div>
          </div>
